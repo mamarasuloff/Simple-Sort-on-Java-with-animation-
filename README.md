@@ -1,1 +1,1 @@
-# Simple-Sorting-on-Java-with-animation-
+# Simple-Sort-on-Java-with-animation-
