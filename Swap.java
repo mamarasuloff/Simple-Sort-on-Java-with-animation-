@@ -29,4 +29,4 @@ public class Swap {
 		if(swapCounter < 6) swapCounter++;
 		else { swapCounter = 0; isSwapped = false; }
 	}
-}
+} 
