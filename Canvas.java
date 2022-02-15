@@ -26,7 +26,7 @@ public class Canvas {
 	boolean isStarted = false;
 
 	public Canvas() {															   				    
-		timer = new Timer(85, new updateTime_());
+		timer = new Timer(80, new updateTime_());
 	}																			    
 	
 	class updateTime_ implements ActionListener {
@@ -41,8 +41,7 @@ public class Canvas {
 			Graphics2D g2d = (Graphics2D) g;
 			
 			if(!isStarted) {
-				sort_.StringToInteger();
-				sort_.Method();
+				sort_.getRandomNumber(1, 100);
 				isStarted = true;
 			}
 			
@@ -78,7 +77,7 @@ public class Canvas {
 				g.drawString(numberBufferA, 65 + swap.getX(swap.getUp(swap.swapCounter), 45), (62 + pointBufferA - 10) - swap.getY(swap.getUp(swap.swapCounter), 23));
 				g.drawRect(60 + swap.getX(swap.getDown(swap.swapCounter), 45), (32 + pointBufferA - 10) - swap.getY(swap.getDown(swap.swapCounter), 23), 40, 40);
 				g.drawRect(60 + swap.getX(swap.getUp(swap.swapCounter), 45), (32 + pointBufferA - 10) - swap.getY(swap.getUp(swap.swapCounter), 23), 40, 40);
-			} else if(sort_.firstCounter < sort_.numbers.length - 1){
+			} else if(sort_.firstCounter < sort_.point.length - 1){
 				g.setFont(new Font("Colibri", Font.BOLD, 30));
 				g.setColor(Color.red);
 				g.drawRect(60, sort_.point_.get(sort_.firstCounter), 40, 40);
