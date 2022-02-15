@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class Sort_ {
 
 	Point[] point = new Point[10];
-	String[] numbers = {"36", "28", "43", "11", "7", "55", "17", "23", "13", "52"};
 	ArrayList<Integer> point_ = new ArrayList<Integer>();
 	ArrayList<String> numbers_ = new ArrayList<String>();
 	ArrayList<Integer> Numbers = new ArrayList<Integer>();
@@ -14,6 +13,7 @@ public class Sort_ {
 	int firstCounter;
 	int secondCounter;
 	int secondBuffer;
+	int randomNumber;
 	String firstBuffer;
 	boolean isSorted = false;
 	
@@ -21,23 +21,19 @@ public class Sort_ {
 		
 	}
 	
-	public void Method() {
-		if(!point_.isEmpty() || !numbers_.isEmpty()) { point_.clear(); numbers_.clear(); }	
+	public void getRandomNumber(int min, int max) {
+		//if(!point_.isEmpty() || !numbers_.isEmpty()) { point_.clear(); numbers_.clear(); }	
 		for(int i = 0, j = 20; i < point.length; i++, j += 45) {
 			point[i] = new Point(60, j);
 			point_.add(i, (int) point[i].getY());
-			numbers_.add(numbers[i]);
-		}
-	}
-	
-	public void StringToInteger() {
-		for(int i = 0; i < numbers.length; i++) {
-			Numbers.add(Integer.parseInt(numbers[i]));
+			randomNumber = (int) ((Math.random() * (max - min)) + min);
+			Numbers.add(i, randomNumber);
+			numbers_.add(i, Integer.toString(randomNumber));
 		}
 	}
 	
 	public void Sorting() {
-		if((firstCounter < numbers.length - 1) && secondCounter != 0) {
+		if((firstCounter < point.length - 1) && secondCounter != 0) {
 			firstCounter++;
 			if(Numbers.get(firstCounter) < Numbers.get(firstCounter - 1)) {
 				isSorted = true;
@@ -48,7 +44,7 @@ public class Sort_ {
 				Numbers.set(firstCounter, Numbers.get(firstCounter - 1));
 				Numbers.set(firstCounter - 1, secondBuffer);
 			} else isSorted = false;
-		} else if(secondCounter < numbers.length - 1) {
+		} else if(secondCounter < point.length - 1) {
 			isSorted = false;
 			firstCounter = 0;
 			secondCounter++;
