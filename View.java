@@ -41,12 +41,12 @@ public class View {
     	secondPanel = new JPanel();														  //
     	secondPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE));				  //
     	secondPanel.setLayout(new BorderLayout());										  //
-    	secondPanel.setPreferredSize(new Dimension(400, 500));							  //
+    	secondPanel.setPreferredSize(new Dimension(200, 500));							  //
     	secondPanel.add(canvas.canvas_, BorderLayout.CENTER);							  //
     	// =================================================================================
     	
     	// Frame parameters ================================================================
-    	frame.setSize(550, 550); 	// set frame size								      //										
+    	frame.setSize(300, 550); 	// set frame size								      //										
     	frame.setResizable(false);														  //
     	frame.setVisible(true); 	// display frame									  //
     	frame.setLayout(new BorderLayout());											  //
